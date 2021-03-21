@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="motoGP" Class="ModelBazyDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ZELUPC\SQLEXPRESS;Initial Catalog=motoGP;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="motoGPConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Teams" Member="Team">
+    <Type Name="Team">
+      <Column Name="id_team" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Team_Riders" Member="Rider" ThisKey="id_team" OtherKey="id_team" Type="Rider" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Riders" Member="Rider">
+    <Type Name="Rider">
+      <Column Name="id_rider" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_team" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lastName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="firstName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="nationality" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="height" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="weight" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Team_Riders" Member="Team" ThisKey="id_team" OtherKey="id_team" Type="Team" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
