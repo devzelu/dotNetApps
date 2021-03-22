@@ -122,7 +122,6 @@
       <DependentUpon>ModelBazy.dbml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test.cs" />
     <Compile Include="Views\RiderCreate.aspx.cs">
       <DependentUpon>RiderCreate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
