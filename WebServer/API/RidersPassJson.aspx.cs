@@ -6,9 +6,10 @@ namespace WebServer.API
 {
     public partial class RidersPassJson : System.Web.UI.Page
     {
+        //This page give JSON string with all Riders in database
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             RidersManager rm = new RidersManager();
 
             JavaScriptSerializer jss = new JavaScriptSerializer();

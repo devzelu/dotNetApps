@@ -11,6 +11,9 @@ namespace WebServer.API
 
             string idRider = Request["idRider"];
             string idTeam = Request["idTeam"];
+
+            //if RiderEditScript.js pass teamID and riderID via POST Call method SetTeam()
+            //else get all teams serialize to JSON string for RiderEditScript.js to create dropdown list
             if(!string.IsNullOrEmpty(idRider) && !string.IsNullOrEmpty(idTeam))
             {
 

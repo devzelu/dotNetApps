@@ -209,6 +209,7 @@
     <None Include="Models\ModelBazy.dbml.layout">
       <DependentUpon>ModelBazy.dbml</DependentUpon>
     </None>
+    <Content Include="motoGP.bak" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

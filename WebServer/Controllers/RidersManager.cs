@@ -13,7 +13,10 @@ namespace WebServer.Controllers
         {
             managerRidersDB = new ManagerRidersDB();
         }
-
+        /// <summary>
+        /// Remove Rider
+        /// </summary>
+        /// <param name="id">Rider id</param>
         public void Remove(int id)
         {
             managerRidersDB.Remove(id);
