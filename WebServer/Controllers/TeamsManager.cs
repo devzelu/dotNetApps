@@ -13,11 +13,32 @@ namespace WebServer.Controllers
             managerTeamsDB = new ManagerTeamsDB();
         }
 
+        //public TeamView[] PassTeams()
+        //{
+        //    Team[] teamsDb= managerTeamsDB.PassTeams();
+
+        //    return teamsDb.Select(x => new TeamView() { Id = x.id_team,TeamName = x.name}).ToArray();
+        //}
         public TeamView[] PassTeams()
         {
-            Team[] teamsDb= managerTeamsDB.PassTeams();
+            Team[] teamsTab = managerTeamsDB.PassTeams();
+            TeamView[] tab = new TeamView[teamsTab.Length];
+            for (int i = 0; i < tab.Length; i++)
+                tab[i] = ConvertToTeamView(teamsTab[i]);
 
-            return teamsDb.Select(x => new TeamView() { Id = x.id_team,TeamName = x.name}).ToArray();
+            return tab;
+        }
+
+        private TeamView ConvertToTeamView(Team team)
+        {
+            TeamView teamView = new TeamView()
+            {
+                Id = team.id_team,
+                TeamName = team.name
+            };
+            return teamView;
+
+
         }
     }
 }

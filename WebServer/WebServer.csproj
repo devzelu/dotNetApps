@@ -43,9 +43,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="B02ManagerAnalizyDanych">
-      <HintPath>..\..\Dzien8\B02ManagerAnalizyDanych\bin\Debug\B02ManagerAnalizyDanych.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
@@ -93,6 +90,7 @@
     <Content Include="assets\js\plugins\perfect-scrollbar.jquery.min.js" />
     <Content Include="scriptsJS\RiderEdit\RiderEditScript.js" />
     <Content Include="Views\RiderCreate.aspx" />
+    <Content Include="Views\TeamsTable.aspx" />
     <Content Include="Views\RidersTable.aspx" />
     <Content Include="Views\RiderEdit.aspx" />
     <Content Include="Web.config" />
@@ -128,6 +126,13 @@
     </Compile>
     <Compile Include="Views\RiderCreate.aspx.designer.cs">
       <DependentUpon>RiderCreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TeamsTable.aspx.cs">
+      <DependentUpon>TeamsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TeamsTable.aspx.designer.cs">
+      <DependentUpon>TeamsTable.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewModels\TeamView.cs" />
     <Compile Include="Views\ViewModels\RiderView.cs" />
