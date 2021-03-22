@@ -13,12 +13,6 @@ namespace WebServer.Controllers
             managerTeamsDB = new ManagerTeamsDB();
         }
 
-        //public TeamView[] PassTeams()
-        //{
-        //    Team[] teamsDb= managerTeamsDB.PassTeams();
-
-        //    return teamsDb.Select(x => new TeamView() { Id = x.id_team,TeamName = x.name}).ToArray();
-        //}
         public TeamView[] PassTeams()
         {
             Team[] teamsTab = managerTeamsDB.PassTeams();

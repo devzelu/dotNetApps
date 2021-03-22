@@ -69,7 +69,6 @@
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="TeamCreate.aspx">
                   <i class="now-ui-icons ui-1_simple-add"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Add</span>
