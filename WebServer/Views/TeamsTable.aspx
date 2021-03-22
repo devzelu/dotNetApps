@@ -108,7 +108,7 @@
                             { %>
 
                                <tr>
-                                   <td><a href="TeamsEdit.aspx?id=<%= TeamsList[i].Id %>"><%= TeamsList[i].TeamName%></a></td>
+                                   <td><a href="#<%= TeamsList[i].Id %>"><%= TeamsList[i].TeamName%></a></td>
                                    <td><%= TeamsList[i].Id%></td>
                                </tr> 
 

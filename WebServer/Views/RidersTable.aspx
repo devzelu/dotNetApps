@@ -119,7 +119,7 @@
                                <tr>
                                    <td><a href="RiderEdit.aspx?id=<%= RidersList[i].Id_Rider %>"><%= RidersList[i].FirstName + " " + RidersList[i].LastName %></a></td>
                                    <td><%= RidersList[i].TeamName %></td>
-                                   <td><%= RidersList[i].Nationality %></td>
+                                   <td><img src="../assets/img/<%= RidersList[i].Nationality.ToUpper() %>.svg" style="width:7%;transform: scale(0.7);"> <%= RidersList[i].Nationality.ToUpper() %></td>
                                    <td><%= RidersList[i].Height %></td>
                                    <td><%= RidersList[i].Weight %></td>
                                </tr> 

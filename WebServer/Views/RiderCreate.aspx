@@ -111,26 +111,7 @@
                           <asp:TextBox ID="txtHeight" CssClass="form-control" runat="server"></asp:TextBox>
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label>Team</label>
-                           <ul class="navbar-nav">
-                              <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Team..
-                                </a>
-                                <div id="dvListaTeamow" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                               </div>
-                              </li>
-                            </ul>
-
-                      
-                      
-                      </div>
-                    </div>
-                  </div>
+                  </div>                   
 
                     <asp:Button ID="btnSave" OnClick="btnSave_Click" CssClass="btn btn-primary btn-block" runat="server" Text="Save" />
 
@@ -188,7 +169,6 @@
   <script src="../assets/js/now-ui-dashboard.min.js?v=1.3.0" type="text/javascript"></script>
   <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
-  <script src="../scriptsJS/RiderEdit/RiderEditScript.js"></script>
 </body>
 
 </html>
