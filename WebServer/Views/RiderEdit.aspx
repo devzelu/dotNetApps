@@ -49,6 +49,13 @@
               <p>MOTOGP RIDERS</p>
             </a>
           </li>
+             <li>
+            <a href="./TeamsTable.aspx">
+              <i class="now-ui-icons design_bullet-list-67"></i>
+              <p>MOTOGP Teams</p>
+            </a>
+          </li>
+        
         </ul>
       </div>
     </div>
@@ -69,21 +76,18 @@
                       <div class="form-group">
                         <label>RiderID</label>
                            <asp:TextBox ID="txtIdRider" CssClass="form-control" Enabled="false"  runat="server"></asp:TextBox>
-                        <%--<input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">--%>
                       </div>
                     </div>
                     <div class="col-md-3 px-1">
                       <div class="form-group">
                         <label>FirstName</label>
                         <asp:TextBox ID="txtFirstName" CssClass="form-control" runat="server"></asp:TextBox>
-                        <%--<input type="text" class="form-control" placeholder="Username" value="michael23">--%>
                       </div>
                     </div>
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label for="exampleInputEmail1">LastName</label>
                           <asp:TextBox ID="txtLastName" CssClass="form-control" runat="server"></asp:TextBox>
-                        <%--<input type="email" class="form-control" placeholder="Email">--%>
                       </div>
                     </div>
                   </div>
@@ -92,14 +96,12 @@
                       <div class="form-group">
                         <label>Nationality</label>
                           <asp:TextBox ID="txtNationality" CssClass="form-control" runat="server"></asp:TextBox>
-                        <%--<input type="text" class="form-control" placeholder="Company" value="Mike">--%>
                       </div>
                     </div>
                     <div class="col-md-6 pl-1">
                       <div class="form-group">
                         <label>Weight</label>
                           <asp:TextBox ID="txtWeight" CssClass="form-control" runat="server"></asp:TextBox>
-                        <%--<input type="text" class="form-control" placeholder="Last Name" value="Andrew">--%>
                       </div>
                     </div>
                   </div>
@@ -108,7 +110,6 @@
                       <div class="form-group">
                         <label>Height</label>
                           <asp:TextBox ID="txtHeight" CssClass="form-control" runat="server"></asp:TextBox>
-                        <%--<input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">--%>
                       </div>
                     </div>
                   </div>
@@ -116,22 +117,15 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Team</label>
-                          <%--<asp:DropDownList ID="ddlTeam" CssClass="dropdown" runat="server"></asp:DropDownList>--%>
 
-                        <%--<input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">--%>
                       
                            <ul class="navbar-nav">
                               <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Team..
+                                  <asp:Label id="lblTeamName" text="Choose team" runat="server"></asp:Label>
                                 </a>
                                 <div id="dvListaTeamow" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                                
-                                    <%--  <a class="dropdown-item" href="#">Action</a>
-                                  <a class="dropdown-item" href="#">Another action</a>
-                                  <a class="dropdown-item" href="#">Something else here</a>--%>
-                               
-                                    </div>
+                               </div>
                               </li>
                             </ul>
 

@@ -69,6 +69,15 @@ namespace WebServer.Views
         protected global::System.Web.UI.WebControls.TextBox txtHeight;
 
         /// <summary>
+        /// lblTeamName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTeamName;
+
+        /// <summary>
         /// btnSave control.
         /// </summary>
         /// <remarks>

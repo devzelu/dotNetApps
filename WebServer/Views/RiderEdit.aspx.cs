@@ -27,6 +27,14 @@ namespace WebServer.Views
                 RiderView r = rm.PassRider(id);
 
                 txtIdRider.Text = r.Id_Rider.ToString();
+                if (r.TeamName == "")
+                {
+                }
+                else
+                {
+
+                lblTeamName.Text = r.TeamName;
+                }
                 txtFirstName.Text = r.FirstName;
                 txtLastName.Text = r.LastName;
                 txtNationality.Text = r.Nationality;

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RidersTable.aspx.cs" Inherits="WebServer.Views.RidersTable" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TeamsTable.aspx.cs" Inherits="WebServer.Views.TeamsTable" %>
 
 
 
@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    MotoGP Riders List
+    MotoGP Teams List
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -40,13 +40,13 @@
           <li class="active ">
             <a href="./RidersTable.aspx">
               <i class="now-ui-icons design_bullet-list-67"></i>
-              <p>MotoGP Riders</p>
+              <p>MotoGP Teams</p>
             </a>
           </li>
              <li>
-            <a href="./TeamsTable.aspx">
+            <a href="./RidersTable.aspx">
               <i class="now-ui-icons design_bullet-list-67"></i>
-              <p>MOTOGP Teams</p>
+              <p>MOTOGP Riders</p>
             </a>
           </li>
         </ul>
@@ -64,12 +64,12 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="RidersTable.aspx">MotoGP Riders</a>
+            <a class="navbar-brand" href="TeamsTable.aspx">MotoGP Teams</a>
           </div>
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="RiderCreate.aspx">
+                <a class="nav-link" href="TeamCreate.aspx">
                   <i class="now-ui-icons ui-1_simple-add"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Add</span>
@@ -88,40 +88,29 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">MotoGP Riders</h4>
+                <h4 class="card-title">MotoGP Teams</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-primary">
                       <th>
-                        Name
+                        Team Name
                       </th>
                        <th>
-                          Team
+                          TeamID
                         </th>
-                      <th>
-                        Nationality
-                      </th>
-                      <th>
-                        Height
-                      </th>
-                      <th>
-                        Weight
-                      </th>
+                     
                     </thead>
                     <tbody>
                       
                         <% 
-                            for (int i = 0; i < RidersList.Length; i++)
+                            for (int i = 0; i < TeamsList.Length; i++)
                             { %>
 
                                <tr>
-                                   <td><a href="RiderEdit.aspx?id=<%= RidersList[i].Id_Rider %>"><%= RidersList[i].FirstName + " " + RidersList[i].LastName %></a></td>
-                                   <td><%= RidersList[i].TeamName %></td>
-                                   <td><%= RidersList[i].Nationality %></td>
-                                   <td><%= RidersList[i].Height %></td>
-                                   <td><%= RidersList[i].Weight %></td>
+                                   <td><a href="TeamsEdit.aspx?id=<%= TeamsList[i].Id %>"><%= TeamsList[i].TeamName%></a></td>
+                                   <td><%= TeamsList[i].Id%></td>
                                </tr> 
 
                          <%  }
