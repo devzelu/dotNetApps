@@ -6,6 +6,19 @@ namespace WebServer.Views.ViewModels
     {
         public int Id_Rider { get; set; }
         public int? Id_Team { get; set; }
+        public string TeamName { get 
+            {
+                if (Id_Team != null)
+                {
+                Models.ManagerTeamsDB managerTeamsDB =  new Models.ManagerTeamsDB();
+                return managerTeamsDB.PassTeam(Id_Team).name;
+                }
+                else
+                {
+                    return "";
+                }
+            } 
+        }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Nationality { get; set; }

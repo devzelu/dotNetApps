@@ -112,7 +112,7 @@
 
                                <tr>
                                    <td><a href="RiderEdit.aspx?id=<%= RidersList[i].Id_Rider %>"><%= RidersList[i].FirstName + " " + RidersList[i].LastName %></a></td>
-                                   <td><%= RidersList[i].Id_Team %></td>
+                                   <td><%= RidersList[i].TeamName %></td>
                                    <td><%= RidersList[i].Nationality %></td>
                                    <td><%= RidersList[i].Height %></td>
                                    <td><%= RidersList[i].Weight %></td>
