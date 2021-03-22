@@ -30,12 +30,12 @@ namespace WebServer.Models
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertTeam(Team instance);
-    partial void UpdateTeam(Team instance);
-    partial void DeleteTeam(Team instance);
     partial void InsertRider(Rider instance);
     partial void UpdateRider(Rider instance);
     partial void DeleteRider(Rider instance);
+    partial void InsertTeam(Team instance);
+    partial void UpdateTeam(Team instance);
+    partial void DeleteTeam(Team instance);
     #endregion
 		
 		public ModelBazyDataContext() : 
@@ -68,14 +68,6 @@ namespace WebServer.Models
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Team> Team
-		{
-			get
-			{
-				return this.GetTable<Team>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Rider> Rider
 		{
 			get
@@ -83,119 +75,13 @@ namespace WebServer.Models
 				return this.GetTable<Rider>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Teams")]
-	public partial class Team : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_team;
-		
-		private string _name;
-		
-		private EntitySet<Rider> _Rider;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_teamChanging(int value);
-    partial void Onid_teamChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    #endregion
-		
-		public Team()
-		{
-			this._Rider = new EntitySet<Rider>(new Action<Rider>(this.attach_Rider), new Action<Rider>(this.detach_Rider));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_team", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_team
+		public System.Data.Linq.Table<Team> Team
 		{
 			get
 			{
-				return this._id_team;
+				return this.GetTable<Team>();
 			}
-			set
-			{
-				if ((this._id_team != value))
-				{
-					this.Onid_teamChanging(value);
-					this.SendPropertyChanging();
-					this._id_team = value;
-					this.SendPropertyChanged("id_team");
-					this.Onid_teamChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(255)")]
-		public string name
-		{
-			get
-			{
-				return this._name;
-			}
-			set
-			{
-				if ((this._name != value))
-				{
-					this.OnnameChanging(value);
-					this.SendPropertyChanging();
-					this._name = value;
-					this.SendPropertyChanged("name");
-					this.OnnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Team_Riders", Storage="_Rider", ThisKey="id_team", OtherKey="id_team")]
-		public EntitySet<Rider> Rider
-		{
-			get
-			{
-				return this._Rider;
-			}
-			set
-			{
-				this._Rider.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Rider(Rider entity)
-		{
-			this.SendPropertyChanging();
-			entity.Team = this;
-		}
-		
-		private void detach_Rider(Rider entity)
-		{
-			this.SendPropertyChanging();
-			entity.Team = null;
 		}
 	}
 	
@@ -219,6 +105,8 @@ namespace WebServer.Models
 		
 		private System.Nullable<int> _weight;
 		
+		private System.Nullable<int> _startNumber;
+		
 		private EntityRef<Team> _Team;
 		
     #region Extensibility Method Definitions
@@ -239,6 +127,8 @@ namespace WebServer.Models
     partial void OnheightChanged();
     partial void OnweightChanging(System.Nullable<int> value);
     partial void OnweightChanged();
+    partial void OnstartNumberChanging(System.Nullable<int> value);
+    partial void OnstartNumberChanged();
     #endregion
 		
 		public Rider()
@@ -391,7 +281,27 @@ namespace WebServer.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Team_Riders", Storage="_Team", ThisKey="id_team", OtherKey="id_team", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_startNumber", DbType="Int")]
+		public System.Nullable<int> startNumber
+		{
+			get
+			{
+				return this._startNumber;
+			}
+			set
+			{
+				if ((this._startNumber != value))
+				{
+					this.OnstartNumberChanging(value);
+					this.SendPropertyChanging();
+					this._startNumber = value;
+					this.SendPropertyChanged("startNumber");
+					this.OnstartNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Teams_Riders", Storage="_Team", ThisKey="id_team", OtherKey="id_team", IsForeignKey=true)]
 		public Team Team
 		{
 			get
@@ -443,6 +353,144 @@ namespace WebServer.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Teams")]
+	public partial class Team : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_team;
+		
+		private string _name;
+		
+		private string _color;
+		
+		private EntitySet<Rider> _Rider;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_teamChanging(int value);
+    partial void Onid_teamChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OncolorChanging(string value);
+    partial void OncolorChanged();
+    #endregion
+		
+		public Team()
+		{
+			this._Rider = new EntitySet<Rider>(new Action<Rider>(this.attach_Rider), new Action<Rider>(this.detach_Rider));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_team", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_team
+		{
+			get
+			{
+				return this._id_team;
+			}
+			set
+			{
+				if ((this._id_team != value))
+				{
+					this.Onid_teamChanging(value);
+					this.SendPropertyChanging();
+					this._id_team = value;
+					this.SendPropertyChanged("id_team");
+					this.Onid_teamChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(255)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_color", DbType="VarChar(255)")]
+		public string color
+		{
+			get
+			{
+				return this._color;
+			}
+			set
+			{
+				if ((this._color != value))
+				{
+					this.OncolorChanging(value);
+					this.SendPropertyChanging();
+					this._color = value;
+					this.SendPropertyChanged("color");
+					this.OncolorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Teams_Riders", Storage="_Rider", ThisKey="id_team", OtherKey="id_team")]
+		public EntitySet<Rider> Rider
+		{
+			get
+			{
+				return this._Rider;
+			}
+			set
+			{
+				this._Rider.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Rider(Rider entity)
+		{
+			this.SendPropertyChanging();
+			entity.Team = this;
+		}
+		
+		private void detach_Rider(Rider entity)
+		{
+			this.SendPropertyChanging();
+			entity.Team = null;
 		}
 	}
 }

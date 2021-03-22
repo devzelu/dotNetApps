@@ -150,23 +150,9 @@
           <div class="col-md-4">
             <div class="card card-user">
               <div class="image">
-                <img src="../assets/img/bg5.jpg" alt="...">
               </div>
               <div class="card-body">
-                <div class="author">
-                  <a href="#">
-                    <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
-                    <h5 class="title">Mike Andrew</h5>
-                  </a>
-                  <p class="description">
-                    michael24
-                  </p>
-                </div>
-                <p class="description text-center">
-                  "Lamborghini Mercy
-                  <br> Your chick she so thirsty
-                  <br> I'm in that two seat Lambo"
-                </p>
+                <img style="transform:scaleX(-1)" src="../assets/img/Riders/<%=RiderNickName%>.png">
               </div>
               <hr>
               <div class="button-container">

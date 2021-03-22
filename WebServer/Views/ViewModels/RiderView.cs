@@ -20,12 +20,24 @@ namespace WebServer.Views.ViewModels
             } 
            
         }
+       
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Nationality { get; set; }
         public int? Height { get; set; }
         public int? Weight { get; set; }
-       
+        public int? StartNumber { get; set; }
+
+
+        public string NickName
+        {
+            get
+            {
+                return FirstName.Substring(0,1) + LastName.Substring(0,1) + StartNumber.ToString();
+            }
+        }
+
 
         public string NameNationality
         {
@@ -51,7 +63,7 @@ namespace WebServer.Views.ViewModels
             Nationality = nationality;
         }
 
-        public RiderView(string id_Rider, string id_Team, string firstName, string lastName, string nationality,string height, string weight)
+        public RiderView(string id_Rider, string id_Team, string firstName, string lastName, string nationality,string height, string weight,string startNumber)
         {
             Id_Rider = Convert.ToInt32(id_Rider);
 
@@ -73,6 +85,14 @@ namespace WebServer.Views.ViewModels
                 Weight = null;
             else
                 Weight = Convert.ToInt32(weight);
+            if(startNumber == "")
+            {
+                StartNumber = null;
+            }
+            else
+            {
+                StartNumber = Convert.ToInt32(startNumber);
+            }
 
         }
 

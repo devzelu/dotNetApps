@@ -86,6 +86,7 @@ namespace WebServer.Controllers
                 Nationality = rider.nationality,
                 Height = rider.height,
                 Weight = rider.weight,
+                StartNumber = rider.startNumber
             };
              return r;
 

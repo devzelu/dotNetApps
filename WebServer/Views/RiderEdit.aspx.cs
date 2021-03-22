@@ -8,6 +8,7 @@ namespace WebServer.Views
     public partial class RiderEdit : System.Web.UI.Page
     {
         readonly RidersManager rm = new RidersManager();
+        public string RiderNickName;
         private void RedirectToMainPage()
         {
             Response.Redirect("RidersTable.aspx");
@@ -36,6 +37,7 @@ namespace WebServer.Views
                 lblTeamName.Text = r.TeamName;
                 }
                 txtFirstName.Text = r.FirstName;
+                RiderNickName = r.NickName;
                 txtLastName.Text = r.LastName;
                 txtNationality.Text = r.Nationality;
                 txtHeight.Text = r.Height.ToString();
